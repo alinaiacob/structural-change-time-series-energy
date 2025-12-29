@@ -46,7 +46,8 @@ def cumsum(df, symbol):
         cumsum[i] = max(0, cumsum[i-1] + (x.iloc[i] - mu - k))
     breaks = np.where(cumsum > h)[0]
     break_dates = df.index[breaks]
-    print("break dates for ", symbol,break_dates)
+    return df
+    #print("break dates for ", symbol,break_dates)
     #plotForCumSum(df, symbol, cumsum, h)
 
 def plotForCumSum(df, symbol, cumsum, h):
